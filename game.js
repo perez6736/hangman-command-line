@@ -19,7 +19,7 @@ function startGame(){
 	gameWord.displayUnderscores(); 
 
 	//prompt the uuser for a guess 
-	askForGuess(gameWord.currentWord);
+	askForGuess(gameWord);
 
 }
 // this function takes in the gameword as the parameter 
@@ -27,6 +27,7 @@ function askForGuess (word){
 	//empty array of guessed letters
 	var lettersGuessed = []; 
 
+	
 	inquirer.prompt([{
         name: "letter",
         message: "Guess a letter and press enter. You have " + guessesRemaining + " guesses left."
@@ -39,13 +40,19 @@ function askForGuess (word){
 		lettersGuessed.push(letter.lettersGuessed); 
 
 		// after we get the guess we need to check if the guess was correct. 
-		if (letter.isCorrect(word)){
+		if (letter.isCorrect(word.currentWord)){
 			//do something for correct guesses
 			console.log("correct guess");
+			// replace the underscores 
+			word.replaceUnderscores(letter.letterGuessed);
+			
 		}
 		else{
 			console.log("incorrect guess");
+			// wrong guess means you lose a guess
+			guessesRemaining--; 
 		}
+
 
 	});
 

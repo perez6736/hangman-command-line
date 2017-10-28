@@ -26,8 +26,29 @@ function Word(){
 		this.underscores = this.underscores.join(' ');
 		console.log(this.underscores);
 	}
-
-
+	// this replaces the underscores by looping through the word
+	this.replaceUnderscores = function(letter){
+		this.currentWord = this.currentWord.toLowerCase(); 
+		console.log(this.underscores);
+		this.underscores = this.underscores.split(' ');
+		console.log(this.underscores);
+		for(i=0; i<this.currentWord.length; i++){
+			if(this.currentWord.charAt(i) === letter){
+				this.underscores[i] = letter;
+			}
+		}
+		console.log(this.underscores);
+		console.log(this.underscores.join(' ')); 
+	}
+	//check to see if user guessed the word by comparing the array of underscores to the current word; 
+	this.didUserWin = function(){
+		if(underscores.join('') === this.currentWord){
+			return true;
+		}
+		else{
+			return false; 
+		}
+	}
 
 }
 
