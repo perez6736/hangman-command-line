@@ -13,10 +13,12 @@ function startGame(){
 
 	// tell the user to make a guess. 
 	console.log(" Please make a guess! The category is funny movies! "); 
-	console.log(gameWord.currentWord); 
 
-	//display the underrscores
-	gameWord.displayUnderscores(); 
+	//for testing s
+	console.log(gameWord.currentWord);
+
+	//show underscores the first time 
+	gameWord.displayUnderscores();
 
 	//prompt the uuser for a guess 
 	askForGuess(gameWord);
@@ -24,10 +26,10 @@ function startGame(){
 // this function takes in the gameword as the parameter 
 function askForGuess (word){
 	//empty array of guessed letters
-	var lettersGuessed = []; 
+	var lettersGuessed = [];
 
 	if(guessesRemaining > 0){ //if the user has guesses let him guess. 
-
+		//display the underscores. 
 		inquirer.prompt([{
 			name: "letter",
 			message: "Guess a letter and press enter. You have " + guessesRemaining + " guesses left."
@@ -45,12 +47,14 @@ function askForGuess (word){
 				console.log("correct guess");
 				// replace the underscores 
 				word.replaceUnderscores(letter.letterGuessed);
-				
+				askForGuess(word);
 			}
 			else{
 				console.log("incorrect guess");
 				// wrong guess means you lose a guess
 				guessesRemaining--; 
+				word.showUnderscores();
+				askForGuess(word);
 			}
 	
 	
@@ -62,4 +66,6 @@ function askForGuess (word){
 	}
 }
 
-startGame(); 
+var test = new Word(); 
+console.log(test.didUserWin());
+// startGame(); 

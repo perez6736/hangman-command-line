@@ -39,15 +39,20 @@ function Word(){
 			}
 		}
 		console.log(this.underscores.join(' '));
+		this.underscoresDisplay = this.underscores.join(' ');
 	}
 	//check to see if user guessed the word by comparing the array of underscores to the current word; 
 	this.didUserWin = function(){
-		if(underscores.join('') === this.currentWord){
+		if(this.underscoresDisplay === this.currentWord.toLowerCase()){
 			return true;
 		}
 		else{
 			return false; 
 		}
+	}
+
+	this.showUnderscores = function(){
+		console.log(this.underscoresDisplay);
 	}
 
 }
