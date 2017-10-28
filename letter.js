@@ -12,7 +12,6 @@ function Letter (letterGuessed){
 		}
 		return false; 
 	}
-
 }
 
 module.exports = Letter;
