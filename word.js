@@ -30,7 +30,7 @@ function Word(){
 	this.replaceUnderscores = function(letter){
 		this.currentWord = this.currentWord.toLowerCase(); 
 		console.log(this.underscores);
-		this.underscores = this.underscores.split(' ');
+		this.underscores = this.underscores.split(' '); //i think this is adding an extra space in the array 
 		console.log(this.underscores);
 		for(i=0; i<this.currentWord.length; i++){
 			if(this.currentWord.charAt(i) === letter){
