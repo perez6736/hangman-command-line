@@ -28,7 +28,11 @@ function askForGuess (word){
 	//empty array of guessed letters
 	var lettersGuessed = [];
 
-	if(guessesRemaining > 0){ //if the user has guesses let him guess. 
+//guessesRemaining > 0 || 
+	if(!word.didUserWin()){ //if the user has guesses let him guess. or if he hasnt won
+		
+		console.log(word.didUserWin());
+
 		//display the underscores. 
 		inquirer.prompt([{
 			name: "letter",
@@ -62,10 +66,16 @@ function askForGuess (word){
 	}
 
 	else{
-		console.log("Game over you ran out of guesses. ")
+		if(word.didUserWin()){
+			console.log("You won!");
+		}
+		else{
+			console.log("Game over you ran out of guesses. ");
+		}
+		
 	}
 }
 
 var test = new Word(); 
-console.log(test.didUserWin());
-// startGame(); 
+
+startGame(); 

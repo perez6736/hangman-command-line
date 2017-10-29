@@ -43,6 +43,9 @@ function Word(){
 	}
 	//check to see if user guessed the word by comparing the array of underscores to the current word; 
 	this.didUserWin = function(){
+		//need to make this variable the word with noe spaces in between 
+		this.underscoresDisplay = this.underscores.join('');
+		
 		if(this.underscoresDisplay === this.currentWord.toLowerCase()){
 			return true;
 		}
@@ -52,6 +55,8 @@ function Word(){
 	}
 
 	this.showUnderscores = function(){
+		//make the underscore display with the spaces 
+		this.underscoresDisplay = this.underscores.join(' ')
 		console.log(this.underscoresDisplay);
 	}
 
