@@ -3,19 +3,22 @@ var Letter = require("./letter.js");
 var inquirer = require('inquirer');
 
 //keep track of guesses
-var guessesRemaining = 5; 
+var guessesRemaining; 
 
 
 function startGame(){
 
+	// set guesses
+	guessesRemaining = 5;
+	
 	// get the word from the word object 
 	var gameWord = new Word();
 
 	// tell the user to make a guess. 
-	console.log(" Please make a guess! The category is funny movies! "); 
+	console.log(" \n Please make a guess! The category is funny movies! "); 
 
 	//for testing s
-	console.log(gameWord.currentWord);
+	//console.log(gameWord.currentWord);
 
 	//show underscores the first time 
 	gameWord.displayUnderscores();
@@ -65,10 +68,12 @@ function askForGuess (word){
 
 	else{
 		if(word.didUserWin()){
-			console.log("You won!");
+			console.log("You won! \n");
+			startGame();
 		}
 		else{
-			console.log("Game over you ran out of guesses. ");
+			console.log("Game over you ran out of guesses. \n");
+			startGame();
 		}
 		
 	}

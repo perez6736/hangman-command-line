@@ -27,7 +27,7 @@ function Word(){
 		}
 		//make the underscoresDsiaply the joined version of the orginal array 
 		this.underscoresDisplay = this.underscores.join(' ');
-		console.log(this.underscoresDisplay);
+		console.log(this.underscoresDisplay +"\n");
 	}
 	// this replaces the underscores by looping through the word
 	this.replaceUnderscores = function(letter){
@@ -38,7 +38,7 @@ function Word(){
 				this.underscores[i] = letter;
 			}
 		}
-		console.log(this.underscores.join(' '));
+		console.log(this.underscores.join(' ') +"\n");
 		this.underscoresDisplay = this.underscores.join(' ');
 	}
 	//check to see if user guessed the word by comparing the array of underscores to the current word; 
