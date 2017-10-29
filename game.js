@@ -29,9 +29,7 @@ function askForGuess (word){
 	var lettersGuessed = [];
 
 //guessesRemaining > 0 || 
-	if(!word.didUserWin()){ //if the user has guesses let him guess. or if he hasnt won
-		
-		console.log(word.didUserWin());
+	if(!word.didUserWin() && guessesRemaining>0){ //if the user has guesses let him guess. or if he hasnt won
 
 		//display the underscores. 
 		inquirer.prompt([{
