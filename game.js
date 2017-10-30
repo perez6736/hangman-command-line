@@ -15,7 +15,7 @@ function startGame(){
 	var gameWord = new Word();
 
 	// tell the user to make a guess. 
-	console.log(" \n Please make a guess! The category is funny movies! "); 
+	console.log("\nPlease make a guess! The category is funny movies! "); 
 
 	//for testing s
 	//console.log(gameWord.currentWord);
@@ -87,6 +87,5 @@ function askForGuess (word){
 	}
 }
 
-var test = new Word(); 
 
 startGame(); 

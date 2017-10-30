@@ -33,9 +33,7 @@ function Word(){
 	}
 	// this replaces the underscores by looping through the word
 	this.replaceUnderscores = function(letter){
-
-		console.log("The original word " + this.orginalWord);
-
+		
 		//make current word lowercase because the user will most likely be putting in lowercase
 		this.currentWord = this.currentWord.toLowerCase();
 		for(i=0; i<this.currentWord.length; i++){
@@ -50,7 +48,6 @@ function Word(){
 	this.didUserWin = function(){
 		//need to make this variable the word with noe spaces in between 
 		this.underscoresDisplay = this.underscores.join('');
-		console.log("undsecoresdisplay:" + this.underscoresDisplay + "  currentWord:" + this.orginalWord);
 		if(this.underscoresDisplay === this.orginalWord){
 			return true;
 		}
