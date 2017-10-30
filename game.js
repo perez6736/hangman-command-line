@@ -10,7 +10,7 @@ function startGame(){
 
 	// set guesses
 	guessesRemaining = 5;
-	
+
 	// get the word from the word object 
 	var gameWord = new Word();
 
@@ -37,9 +37,17 @@ function askForGuess (word){
 		//display the underscores. 
 		inquirer.prompt([{
 			name: "letter",
-			message: "Guess a letter and press enter. You have " + guessesRemaining + " guesses left."
+			message: "Guess a letter and press enter. You have " + guessesRemaining + " guesses left.",
 			// need to validate that the user put a single letter and its valid. 
-		  }])
+			validate: function (answer){
+				if(answer.length>1 || answer === ""){
+					console.log(" -Please enter a valid guess.-")
+					return false;
+				}
+				return true; 
+
+			}
+		}])
 	
 		.then(function (answers) {
 			var letter = new Letter(answers.letter);

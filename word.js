@@ -32,7 +32,10 @@ function Word(){
 	// this replaces the underscores by looping through the word
 	this.replaceUnderscores = function(letter){
 		//make current word lowercase 
-		this.currentWord = this.currentWord.toLowerCase();  
+		this.currentWord = this.currentWord.toLowerCase();
+
+		//maybe create a variable with the original word and use the characters there to replace the underscores to keep the capital letters
+
 		for(i=0; i<this.currentWord.length; i++){
 			if(this.currentWord.charAt(i) === letter){
 				this.underscores[i] = letter;
