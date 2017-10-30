@@ -5,6 +5,7 @@ function Letter (letterGuessed){
 	this.isCorrect = function (word){
 		//make the word lower case when comparing 
 		word = word.toLowerCase();
+
 		for(i=0; i<word.length; i++){
 			if(word[i] === this.letterGuessed){
 				return true;
