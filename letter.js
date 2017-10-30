@@ -4,10 +4,10 @@ function Letter (letterGuessed){
 
 	this.isCorrect = function (word){
 		//make the word lower case when comparing 
-		word = word.toLowerCase();
+		var word = word;
 
 		for(i=0; i<word.length; i++){
-			if(word[i] === this.letterGuessed){
+			if(word.toLowerCase()[i] === this.letterGuessed){
 				return true;
 			}
 		}

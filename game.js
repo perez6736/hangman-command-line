@@ -80,7 +80,7 @@ function askForGuess (word){
 			startGame();
 		}
 		else{
-			console.log("Game over you ran out of guesses. \n");
+			console.log("The word was: " + word.currentWord + "\nGame over you ran out of guesses. \n");
 			startGame();
 		}
 		

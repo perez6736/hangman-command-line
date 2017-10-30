@@ -4,8 +4,6 @@ function Word(){
 
 	//pick a random word from the array. 
 	this.currentWord = this.wordsArray[Math.floor(Math.random()*this.wordsArray.length)];
-	// this is used keep the upper case of the word 
-	this.orginalWord = this.currentWord;
 
 	//empty array to hold the underscores
 	this.underscores = [];
@@ -33,12 +31,10 @@ function Word(){
 	}
 	// this replaces the underscores by looping through the word
 	this.replaceUnderscores = function(letter){
-		
-		//make current word lowercase because the user will most likely be putting in lowercase
-		this.currentWord = this.currentWord.toLowerCase();
+
 		for(i=0; i<this.currentWord.length; i++){
-			if(this.currentWord.charAt(i) === letter){
-				this.underscores[i] = this.orginalWord.charAt(i);
+			if(this.currentWord.toLowerCase().charAt(i) === letter){
+				this.underscores[i] = this.currentWord.charAt(i);
 			}
 		}
 		console.log(this.underscores.join(' ') +"\n");
@@ -48,7 +44,7 @@ function Word(){
 	this.didUserWin = function(){
 		//need to make this variable the word with noe spaces in between 
 		this.underscoresDisplay = this.underscores.join('');
-		if(this.underscoresDisplay === this.orginalWord){
+		if(this.underscoresDisplay === this.currentWord){
 			return true;
 		}
 		else{
@@ -59,7 +55,7 @@ function Word(){
 	this.showUnderscores = function(){
 		//make the underscore display with the spaces 
 		this.underscoresDisplay = this.underscores.join(' ')
-		console.log(this.underscoresDisplay);
+		console.log(this.underscoresDisplay + "\n");
 	}
 
 }
